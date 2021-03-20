@@ -183,7 +183,31 @@ button:active {
   opacity: 0;
   cursor: pointer;
 }
+.current-shelf{
+  background-color: #477e61;
+  font:900 arial;
+  color: #ffffff;
 
+}
+.current-shelf::before{
+  content: "\2713  ";
+}
+.book-shelf-selector{
+  position: relative;
+  width: 150px;
+  top:20px;
+  left:10px ;
+  z-index: 1;
+  background-color: aliceblue;
+  border-radius: 10px;
+  text-align: center;
+  font-size:12px;
+  cursor: pointer;
+}
+.book-shelf-selector p:hover{
+  background: rgb(99, 143, 99);
+
+}
 /* book cover */
 
 .book-cover {
