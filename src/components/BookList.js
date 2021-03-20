@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const BookList = (props) =>{
     const {books,rearrangeShelf,categories} = props;
     //set title for each shelf in books array
-    const shelfTypes = [
+    const shelves = [
         { type: categories[0], title: 'Currently Reading' },
         { type: categories[1], title: 'Want to Read' },
         { type:categories[2], title: 'Read' }
@@ -13,7 +13,7 @@ const BookList = (props) =>{
     return(
         <div>
             <div className="list-books-content">
-                 {shelfTypes.map((shelf,index) => {
+                 {shelves.map((shelf,index) => {
                      const bookshelfBooks = books.filter((book)=> book.shelf === shelf.type);
                      return (
                      <div key={index} className="bookshelf"  >
