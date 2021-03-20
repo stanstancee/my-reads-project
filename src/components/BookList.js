@@ -19,7 +19,7 @@ const BookList = (props) =>{
                      return (
                      <div key={index} className="bookshelf"  >
                           <h2 className="bookshelf-title">{shelf.title}</h2>
-                          <Shelf books={bookshelfBooks} />
+                          <Shelf books={bookshelfBooks} rearrangeShelf={rearrangeShelf} />
 
                     </div>
                      );
