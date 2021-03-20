@@ -37,7 +37,7 @@ const Book = props => {
       <div className="book">
         <div className="book-top">
           <CoverImage />
-          <ShelfChanger books={books} book={book} rearrangeShelf={rearrangeShelf}/>
+          <ShelfChanger books={books} book={book} rearrangeShelf={rearrangeShelf}  />
         </div>
         <div className="book-title">{title}</div>
         <BookAuthor />
@@ -49,7 +49,8 @@ const Book = props => {
 Book.propTypes = {
   book: PropTypes.object.isRequired,
   books: PropTypes.array.isRequired,
-  rearrangeShelf: PropTypes.func.isRequired
+  rearrangeShelf: PropTypes.func.isRequired,
+
 };
 
 export default Book;

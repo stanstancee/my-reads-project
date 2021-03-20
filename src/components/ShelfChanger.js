@@ -16,6 +16,7 @@ class ShelfChanger extends Component {
   toggle = ()=> this.setState(prev =>({ bool: !prev.bool}));
   updateShelf = event => this.props.rearrangeShelf(this.props.book, event.target.id);
 
+
   render() {
     const { book, books } = this.props;
 
@@ -53,6 +54,8 @@ class ShelfChanger extends Component {
 ShelfChanger.propTypes = {
   book: PropTypes.object.isRequired,
   books: PropTypes.array.isRequired,
-  changeShelf: PropTypes.func.isRequired
+  rearrangeShelf:PropTypes.func.isRequired,
+
+
 };
 export default ShelfChanger;

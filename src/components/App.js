@@ -2,12 +2,15 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link,
+  Switch
 } from "react-router-dom";
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import * as BooksAPI from '../BooksAPI.js'
 import BookList from './BookList';
+import Search from './Search'
 
 
 
@@ -69,22 +72,37 @@ rearrangeShelf = (updatedBook, shelf) =>{
 
 
     return(
+      <div className="app">
       <Router>
+        <Switch>
+      <Route
+            path="/search"
+            render={() => (
+              <Search books={books} rearrangeShelf={this.rearrangeShelf} />
+            )}
+          />
+
         <Route exact path="/"render={
           ()=>(
             <div className="list-books">
               <div className="list-books-title">
                 <h1>My Reads</h1>
+                </div>
                 <BookList books={books} rearrangeShelf={this.rearrangeShelf} categories={categories} />
+                <div className="open-search">
+                  <Link to="/search">Search</Link>
+                </div>
 
               </div>
 
-            </div>
+
           )
         }>
 
         </Route>
+        </Switch>
       </Router>
+      </div>
     )
 
   }
