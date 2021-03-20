@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Shelf from './Shelf';
 
 const BookList = (props) =>{
     const {books,rearrangeShelf,categories} = props;
@@ -18,6 +19,7 @@ const BookList = (props) =>{
                      return (
                      <div key={index} className="bookshelf"  >
                           <h2 className="bookshelf-title">{shelf.title}</h2>
+                          <Shelf books={bookshelfBooks} />
 
                     </div>
                      );

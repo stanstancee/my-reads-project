@@ -2,13 +2,13 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Switch,
   Route
-
 } from "react-router-dom";
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import * as BooksAPI from '../BooksAPI.js'
+import BookList from './BookList';
+
 
 
 class BooksApp extends React.Component {
@@ -65,12 +65,27 @@ rearrangeShelf = (updatedBook, shelf) =>{
 
 
   render() {
+    const {books,categories} = this.state;
 
-   return(
-     <Router>
 
-     </Router>
-   )
+    return(
+      <Router>
+        <Route exact path="/"render={
+          ()=>(
+            <div className="list-books">
+              <div className="list-books-title">
+                <h1>My Reads</h1>
+                <BookList books={books} rearrangeShelf={this.rearrangeShelf} categories={categories} />
+
+              </div>
+
+            </div>
+          )
+        }>
+
+        </Route>
+      </Router>
+    )
 
   }
 }
