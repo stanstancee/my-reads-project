@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ShelfChanger from './ShelfChanger';
+
 
 const Book = props => {
   const { book, books, rearrangeShelf } = props;
 
   // add fallbacks for missing cover images and title
-
   const title = book.title ? book.title : 'No title available';
+
   const CoverImage = () =>{
     return(
-    book.imageLinks && book.imageLinks.thumbnail ? <div className="book-cover" style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }} >
+    book.imageLinks && book.imageLinks.thumbnail ?
+    <div className="book-cover" style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }} >
     </div>:<div className="book-cover" style={{background:"green"}} >
-         <p>No Cover Image</p>
-            </div>
+            <p>No Cover Image</p>
+          </div>
     )
   }
   const BookAuthor = ()=>{
@@ -34,6 +37,7 @@ const Book = props => {
       <div className="book">
         <div className="book-top">
           <CoverImage />
+          <ShelfChanger books={books} book={book} rearrangeShelf={rearrangeShelf}/>
         </div>
         <div className="book-title">{title}</div>
         <BookAuthor />
