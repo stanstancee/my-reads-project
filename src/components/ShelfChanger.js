@@ -14,6 +14,7 @@ class ShelfChanger extends Component {
   ];
 
   toggle = ()=> this.setState(prev =>({ bool: !prev.bool}));
+  
   updateShelf = event => this.props.rearrangeShelf(this.props.book, event.target.id);
 
 

@@ -149,6 +149,7 @@ button:active {
 
 .book-title {
   margin-top: 10px;
+  font-weight: 700;
 }
 
 .book-authors {
@@ -169,7 +170,7 @@ button:active {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #3ac55d;
   background-image: url('../icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;

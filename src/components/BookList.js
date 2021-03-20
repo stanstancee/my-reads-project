@@ -12,7 +12,7 @@ const BookList = (props) =>{
       ];
 
     return(
-        <div>
+        <div style={{backgroundColor:"hsl(0, 0%, 97%)",color:"hsl(255, 11%, 22%"}}>
             <div className="list-books-content">
                  {shelves.map((shelf,index) => {
                      const bookshelfBooks = books.filter((book)=> book.shelf === shelf.type);
